@@ -1,18 +1,18 @@
-import { Link } from "react-router-dom"
-import { UIBookCard } from './types'
-import {
-    BookCardContainer
-} from './style'
+import React from "react";
+import { BookCardContainer, BookImage, BookTitle } from "./style";
 
-const BookCard: React.FC<UIBookCard> = ({ bookTitle, bookImage }) =>  {
-    return (
-        <BookCardContainer className="BookCard">
-            <Link to="/infoslivro">
-                <img src={bookImage} alt="Book" draggable="false"/>
-                {bookTitle && <h4>{bookTitle}</h4>}
-            </Link>
-        </BookCardContainer>
-    )
+interface Props {
+  image: string;
+  title: string;
 }
 
-export { BookCard }
+const BookCard: React.FC<Props> = ({ image, title }) => {
+  return (
+    <BookCardContainer>
+      <BookImage src={image} alt={title} />
+      <BookTitle>{title}</BookTitle>
+    </BookCardContainer>
+  );
+};
+
+export { BookCard};

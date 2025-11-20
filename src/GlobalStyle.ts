@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle `
     }
 
     :root {
-        --background-gray: #333;
+        --background-gray: #ffffffff;
         --text-color-white: #FFF;
 
         --border-radius1: 7px;

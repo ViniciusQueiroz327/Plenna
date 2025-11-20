@@ -1,98 +1,112 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const MainNav = styled.nav `
-    width: 100%;
-    height: 70px;
-    background-color: var(--background-gray);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 24px;
-    justify-content: space-between;
-    z-index: 5;
+export const HeaderContainer = styled.header`
+  width: 100%;
+  height: 70px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid #e5e7eb;
+`;
 
+export const LeftSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 
-`
+  img {
+    width: 70px;
+  }
 
-export const HomeWrapper = styled.div `
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #1f404e;
+    font-family: "Trebuchet MS", sans-serif;
+  }
+`;
 
-    #logo {
-        margin-top: 10px;
-        width: 100px;
+export const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+
+  li a {
+    font-size: 1.3rem;
+    color: #1f2937;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+    font-family: 'Times New Roman', sans-serif;
+
+    &:hover {
+      color: #1f404e;
     }
+  }
+`;
 
-`
+export const SearchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0 0.75rem;
+  height: 42px;
+  width: 260px;
+  gap: 0.5rem;
 
-export const SearchBoxWrapper = styled.div `
-    display: inline-block;
-    cursor: pointer;
-`
+  svg {
+    width: 18px;
+    height: 18px;
+    color: #6b7280;
+  }
+`;
 
-export const SearchBox = styled.input`
-    width: 400px;
-    height: 40px;
-    background-color: white;
-    border-radius: var(--border-radius2);
-    border-style: none;
-    padding: 0 2rem;
-    font-size: large;
-    outline: none;
-`
+export const SearchInput = styled.input`
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.95rem;
+  color: #374151;
 
-export const DivIcons = styled.div `
-    img {
-        width: 66px;
-        padding: 1rem;
-    }
-`
+  &::placeholder {
+    color: #9ca3af;
+  }
+`;
 
-export const SecondaryNav = styled.nav `
-    width: 100%;
-    height: 35px;
-    background-color: #374151;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    z-index: 4;
-`
+export const IconsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
-export const GenerosNav = styled.ul `
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 2rem;
-    width: 100vw;
-    list-style: none;
-    background-color: #374151;
-    height: 100%;
+  img {
+    width: 25px;
+  }
+`;
 
-    li, a {
-        height: 100%;
-    }
-    
-    li > a {
-        display: grid;
-        place-items: center;
-        padding: 0 10px;
-        color: white;
-        font-weight: 600;
-        background-color: #374151;
-        transition: .25s;
-    }
+export const IconBox = styled.div`
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
 
-    li:hover > a {
-        // opacity: .8;
-        color: #AAA;
-    }
-`
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  transition: 0.2s;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #374151;
+  }
+
+  &:hover {
+    background: #e5e7eb;
+  }
+`;

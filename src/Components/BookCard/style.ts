@@ -1,35 +1,46 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const BookCardContainer = styled.div `
-    flex: 0 0 auto;
-    width: calc((100% - 15px * var(--qtd) + 15px) / var(--qtd));
-    height: 320px;
-    border-radius: var(--border-radius1);
-    background: white;
-    color: black;
-    
-    &:not(:last-child) {
-        margin-right: 15px;
-        }
-        
-    img {
-        height: 70%;
-        // width: 100%;
-        border-radius: var(--border-radius1);
-    }
+export const BookCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
 
-    h4 {
-        height: 100%;
-        color: black;
-        padding: 10px;
-    }
-            
-    a {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px;
-    }
-`
+  cursor: pointer;
+  transition: 0.25s ease;
+  padding: 1rem;
+
+  border-radius: 14px;
+
+  &:hover {
+    transform: translateY(-6px);
+    background: #f9fafb;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  }
+`;
+
+export const BookImage = styled.img`
+  width: 180px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+  transition: 0.25s ease;
+
+  ${BookCardContainer}:hover & {
+    transform: scale(1.03);
+  }
+`;
+
+export const BookTitle = styled.h3`
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1f2937;
+  text-align: center;
+  font-family: 'Times New Roman', sans-serif;
+
+  max-width: 180px;
+  line-height: 1.3;
+`;

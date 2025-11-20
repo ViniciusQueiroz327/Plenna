@@ -1,42 +1,66 @@
-import { Link } from "react-router-dom"
-import { MainNav,
-         SearchBoxWrapper, 
-         SearchBox, 
-         DivIcons,
-         SecondaryNav,
-         GenerosNav,
-         HomeWrapper } from "./style"
+import React from "react";
+// import { Link } from "react-router-dom";
+import {
+  HeaderContainer,
+  LeftSection,
+  NavMenu,
+  SearchWrapper,
+  SearchInput,
+  IconsWrapper,
+  IconBox
+} from "./style";
 
-const Header = () => {
-    return (<>
-        <MainNav>
-            <HomeWrapper>
-                <Link to="/" draggable="false">
-                    <img id="logo"src="./assets/logo.png" alt="Logo Plenna" draggable="false"/>
-                </Link>
-                <a href="/" draggable="false"><h1>PLENNA</h1></a>
-            </HomeWrapper>
-            <SearchBoxWrapper>
-                <SearchBox placeholder="Search"></SearchBox>
-            </SearchBoxWrapper>
-            <DivIcons>
-                <a href="/"><img className="iconsNavBar" src="./assets/icons/carrinho.svg" alt="Carrinho" draggable="false"/></a>
-                <a href="/"><img className="iconsNavBar" src="/assets/icons/notificacoes.svg" alt="Notificações" draggable="false"/></a>
-                <a href="/login"><img className="iconsNavBar" src="/assets/icons/perfil.svg" alt="Perfil" draggable="false"/></a>
-            </DivIcons>
-        </MainNav>
-        <SecondaryNav>
-            <GenerosNav>
-                <li id="dropdownTodos"><a href="#">Todos</a></li>
-                <li><a href="#">Romance</a></li>
-                <li><a href="#">Terror</a></li>
-                <li><a href="#">Suspense</a></li>
-                <li><a href="#">Drama</a></li>
-                <li><a href="#">Fantasia</a></li>
-                <li><a href="#">Ficção Científca</a></li>
-            </GenerosNav>
-        </SecondaryNav>
-    </>)
-}
+const Header: React.FC = () => {
+  return (
+    <HeaderContainer>
+      <LeftSection>
+        {/* Logo + Nome */}
+        <img src="..\public\assets\logo.png" />
 
-export { Header }
+        <h1>Plenna</h1>
+
+        {/* Menu de navegação */}
+        {/* <Navbar /> */}
+      </LeftSection>
+      <NavMenu>
+        <li><a href="">Novidades</a></li>
+        <li><a href="">Mais Procurados</a></li>
+        <li><a href="">Gêneros</a></li>
+        <li><a href="">Autores</a></li>
+        <li><a href="">Promoções</a></li>
+      </NavMenu>
+      {/* Search + ícones */}
+      <IconsWrapper>
+        <SearchWrapper>
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5
+              18a7.5 7.5 0 006.15-3.35z"
+            />
+          </svg>
+
+          <SearchInput type="text" placeholder="Search" />
+        </SearchWrapper>
+
+        {/* Botão Favoritos */}
+        <IconBox>
+          <img src="..\public\assets\icons\favorites.png" />
+        </IconBox>
+
+        {/* Botão Carrinho */}
+        <IconBox>
+          <img src="..\public\assets\icons\carrinho.png" />
+        </IconBox>
+      </IconsWrapper>
+    </HeaderContainer>
+  );
+};
+
+export { Header };

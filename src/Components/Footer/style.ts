@@ -1,86 +1,51 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const ListContainer = styled.div `
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    list-decoration: none;
+export const FooterContainer = styled.footer`
+  width: 100%;
+  padding: 2.5rem 1rem;
+  background: #f3f4f6;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 3rem;
+`;
 
-    .title {
-        padding-bottom: 1rem;
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-decoration: none;
-    }
+export const FooterContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
 
-    .empty {
-        text-decoration: none;
-    } //PROVISÓRIO!!!!!!
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    ul {
-        width: 150px;
-    }
-
-    li {
-        color: black;
-        font-size: .9rem;
-        font-weight: 700;
-        text-decoration: underline;
-        list-style: none;
-    }
-`
-
-export const AuxiliarContainer = styled.div `
-    margin: 20px;
-
-    h2 {
-        position: relative;
-        left: 7.5vw;
-    }
-`
-
-export const ContactsContainer = styled.div`
-    border-left: 1px solid #00000088;
-    padding: 20px 0 20px 170px;
-
-    display: flex;
+  @media (max-width: 700px) {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 1.3rem;
+    gap: 1rem;
+  }
+`;
 
-    .icons {
-        margin: 10px;
+export const FooterCopy = styled.p`
+  font-size: 1rem;
+  color: #475569;
+  font-family: 'Times New Roman', sans-serif;
+`;
+
+export const FooterLinks = styled.nav`
+  display: flex;
+  gap: 2rem;
+
+  a {
+    font-size: 1.1rem;
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Times New Roman', sans-serif;
+    transition: 0.2s ease;
+
+    &:hover {
+      color: #0376a7ff;
     }
+  }
 
-    img {
-        width: 30px;
-    }
-`
-
-export const ContainerMaster = styled.div `
-    padding: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #e2e1d9;
-    gap: 150px;
-    margin-bottom: 30px;
-
-    label {
-        font-weight: 700;
-    }
-
-    h2 {
-        margin-bottom: 30px;
-        font-size: 2.5rem;
-    }
-
-    h1, h2, h3, h4, label, ul > li{
-        color: black;   
-        }
-`
+  @media (max-width: 700px) {
+    gap: 1rem;
+  }
+`;
