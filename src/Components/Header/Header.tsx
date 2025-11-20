@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <LeftSection>
         {/* Logo + Nome */}
         <Link to="/home">
-          <img src="..\public\assets\logo.png" />
+          <img src="/assets/logo.png" />
         </Link>
         <h1>Plenna</h1>
         {/* Menu de navegação */}
@@ -51,15 +51,15 @@ const Header: React.FC = () => {
 
         {/* Botão Favoritos */}
         <IconBox>
-          <img src="..\public\assets\icons\favorites.png" />
+          <img src="/assets/icons/favorites.png" />
         </IconBox>
 
         {/* Botão Carrinho */}
         <IconBox>
-          <img src="..\public\assets\icons\carrinho.png" />
+          <img src="/assets/icons/carrinho.png" />
         </IconBox>
         <IconBox>
-          <img src="..\public\assets\icons\perfil.png" />
+          <img src="/assets/icons/perfil.png" />
         </IconBox>
       </IconsWrapper>
     </HeaderContainer>
