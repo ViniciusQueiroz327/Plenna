@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   HeaderContainer,
   LeftSection,
@@ -15,19 +15,19 @@ const Header: React.FC = () => {
     <HeaderContainer>
       <LeftSection>
         {/* Logo + Nome */}
-        <img src="..\public\assets\logo.png" />
-
+        <Link to="/home">
+          <img src="..\public\assets\logo.png" />
+        </Link>
         <h1>Plenna</h1>
-
         {/* Menu de navegação */}
         {/* <Navbar /> */}
       </LeftSection>
       <NavMenu>
-        <li><a href="">Novidades</a></li>
-        <li><a href="">Mais Procurados</a></li>
-        <li><a href="">Gêneros</a></li>
-        <li><a href="">Autores</a></li>
-        <li><a href="">Promoções</a></li>
+        <li><Link to="/bookscatalog">Catálogo</Link></li>
+        <li><Link to="/">Mais Procurados</Link></li>
+        <li><Link to="/">Gêneros</Link></li>
+        <li><Link to="/">Autores</Link></li>
+        <li><Link to="/">Promoções</Link></li>
       </NavMenu>
       {/* Search + ícones */}
       <IconsWrapper>
@@ -57,6 +57,9 @@ const Header: React.FC = () => {
         {/* Botão Carrinho */}
         <IconBox>
           <img src="..\public\assets\icons\carrinho.png" />
+        </IconBox>
+        <IconBox>
+          <img src="..\public\assets\icons\perfil.png" />
         </IconBox>
       </IconsWrapper>
     </HeaderContainer>
