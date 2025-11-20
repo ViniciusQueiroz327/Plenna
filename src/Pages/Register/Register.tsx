@@ -1,19 +1,18 @@
-import { MasterContainer } from "./style"
-import { FormContainer } from "../Login/style"
-const Register = () => {
-    return (<>
-        <MasterContainer>
-            <FormContainer>
-                <h1>Cadastro</h1>
-                <form action="">
-                    <label htmlFor="nome de usuário">Nome de Usuário</label>
-                    <label htmlFor="email">E-mail</label>
-                    <label htmlFor="password">Senha</label>
-                </form>
-                    <a href="/login">Já possui uma conta?</a>
-            </FormContainer>
-        </MasterContainer>
-    </>)
-}
+import React from "react";
+import { RegisterContainer } from "./style";
 
-export { Register }
+import { FormsHeader } from "../../Components/FormsHeader/FormsHeader";
+import { RegisterBox } from "../../Components/RegisterBox/RegisterBox";
+import { Footer } from "../../Components/Footer/Footer";
+
+const Register: React.FC = () => {
+  return (
+    <RegisterContainer>
+      <FormsHeader />
+      <RegisterBox />
+      <Footer />
+    </RegisterContainer>
+  );
+};
+
+export { Register };

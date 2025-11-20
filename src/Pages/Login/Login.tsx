@@ -1,21 +1,18 @@
-import { MasterContainer, FormContainer, LinksContainer } from "./style"
+import React from "react";
+import { LoginContainer } from "./style";
 
-const Login = () => {
-    return (<>
-        <MasterContainer>
-                <FormContainer>
-                    <h1>Welcome to Plenna!</h1>
-                    <form action="">
-                        <label htmlFor="email">E-mail</label>
-                        <label htmlFor="password">Senha</label>
-                    </form>
-                    <LinksContainer>
-                        <a href="/register">Cadastre-se</a>
-                        <a href="#" id="esqueceuASenha">Esqueceu a senha?</a>
-                    </LinksContainer>
-                </FormContainer>
-        </MasterContainer>
-    </>)
-}
+import { FormsHeader } from "../../Components/FormsHeader/FormsHeader";
+import { LoginBox } from "../../Components/LoginBox/LoginBox";
+import { Footer } from "../../Components/Footer/Footer";
 
-export { Login }
+const Login: React.FC = () => {
+  return (
+    <LoginContainer>
+      <FormsHeader />
+      <LoginBox />
+      <Footer />
+    </LoginContainer>
+  );
+};
+
+export { Login };

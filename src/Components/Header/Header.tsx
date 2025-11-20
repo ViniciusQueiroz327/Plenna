@@ -59,7 +59,7 @@ const Header: React.FC = () => {
           <img src="/assets/icons/carrinho.png" />
         </IconBox>
         <IconBox>
-          <img src="/assets/icons/perfil.png" />
+          <Link to="/login"><img src="/assets/icons/perfil.png" /></Link>
         </IconBox>
       </IconsWrapper>
     </HeaderContainer>
