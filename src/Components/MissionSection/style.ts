@@ -10,7 +10,7 @@ export const MissionContainer = styled.section`
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #1f404e;
-    font-family: "Newsreader", serif;
+    font-family: "Trebuchet MS", sans-serif;
     text-align: center;
   }
 `;

@@ -15,7 +15,7 @@ export const HistoryContainer = styled.section`
     font-size: 2.5rem;
     color: #1f404e;
     margin-bottom: 1rem;
-    font-family: "Times New Roman", sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
   }
 
   p {
@@ -23,6 +23,6 @@ export const HistoryContainer = styled.section`
     line-height: 1.7;
     color: #374151;
     font-family: "Times New Roman", sans-serif;
-    max-width: 900px; /* deixa o texto mais elegante */
+    max-width: 900px;
   }
 `;

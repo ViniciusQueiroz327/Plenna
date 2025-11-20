@@ -10,9 +10,8 @@ export const Footer: React.FC = () => {
 
         <FooterLinks>
           <Link to="/about">Sobre nós</Link>
-          <Link to="">Contato</Link>
-          <Link to="">Política de Privacidade</Link>
-          <Link to="">Termos de Serviço</Link>
+          <Link to="/privacypolicy">Política de Privacidade</Link>
+          <Link to="/serviceterms">Termos de Serviço</Link>
         </FooterLinks>
       </FooterContent>
     </FooterContainer>

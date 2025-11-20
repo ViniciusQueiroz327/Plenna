@@ -5,6 +5,8 @@ import { BooksCatalog } from './Pages/BooksCatalog/BooksCatalog';
 // import { Profile } from './Pages/Profile/Profile';
 import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
+import { PrivacyPolicy } from './Pages/PrivacyPolicy/PrivacyPolicy';
+import { ServiceTerms } from './Pages/ServiceTerms/ServiceTerms';
 
 import {
   BrowserRouter as Router,
@@ -22,6 +24,8 @@ function App() {
         <Route path="/about" element={<About />}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
+        <Route path='/serviceterms' element={<ServiceTerms/>}/>
         {/* 
         
         <Route path="/bookregister" element={<BookRegister />}/>

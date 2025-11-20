@@ -16,7 +16,7 @@ export const TitleBox = styled.div`
   text-align: center;
 
   h1 {
-    font-family: 'Times New Roman', sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px;
