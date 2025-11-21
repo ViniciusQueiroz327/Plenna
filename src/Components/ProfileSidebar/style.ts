@@ -25,16 +25,21 @@ export const UserBox = styled.div`
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: url("/assets/team/Vinicius_Queiroz.png") center/cover;
+    background: url("/assets/icons/perfil.png") center/cover;
+    flex-shrink: 0;
   }
 
-
   .info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+
     strong {
       font-size: 1rem;
       color: #1f404e;
       font-family: "Trebuchet MS", sans-serif;
     }
+
     span {
       font-size: 0.85rem;
       color: #6b7280;
@@ -42,6 +47,7 @@ export const UserBox = styled.div`
     }
   }
 `;
+
 
 export const Menu = styled.nav`
   display: flex;

@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SidebarContainer, UserBox, Menu, Logout } from "./style";
+import { getLoggedUser, logout } from "../../auth";
+import { useNavigate } from "react-router-dom";
 
 interface ProfileSidebarProps {
   setActiveComponent: (component: string) => void;
   activeComponent: string;
 }
 
-const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ setActiveComponent, activeComponent }) => {
+const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
+  setActiveComponent,
+  activeComponent
+}) => {
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedUser = getLoggedUser();
+    if (!loggedUser) return;
+
+    const userEmail = loggedUser.email;
+
+    fetch(`https://plenna-api.onrender.com/api/user/email/${userEmail}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setNome(data.nome);
+        setEmail(data.email);
+      })
+      .catch((err) => console.error("Erro ao carregar usuário:", err));
+  }, []);
+
   return (
     <SidebarContainer>
       <UserBox>
         <div className="avatar" />
         <div className="info">
-          <strong>Vinicius Queiroz</strong>
-          <span>gm.gb@outlook.com</span>
+          <strong>{nome || "Desconhecido"}</strong>
+          <span>{email || "example@email.com"}</span>
         </div>
       </UserBox>
 
@@ -36,7 +61,12 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({ setActiveComponent, act
         ))}
       </Menu>
 
-      <Logout>
+      <Logout
+        onClick={() => {
+          logout();
+          navigate("/home");
+        }}
+      >
         <img src="/assets/icons/logout.png" alt="" />
         Sair
       </Logout>

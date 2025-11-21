@@ -7,21 +7,36 @@ import {
   SearchWrapper,
   SearchInput,
   IconsWrapper,
-  IconBox
+  IconBox,
+  ProfileWrapper,
+  ProfileIcon,
+  DropdownMenu,
+  DropdownItem
 } from "./style";
 
+import { isLoggedIn, logout, getLoggedUser } from "../../auth";
+
 const Header: React.FC = () => {
+  const [openMenu, setOpenMenu] = React.useState(false);
+  const [logged, setLogged] = React.useState<boolean>(isLoggedIn());
+
+  React.useEffect(() => {
+    // Reage caso outro componente altere login.
+    const syncLogin = () => setLogged(isLoggedIn());
+    window.addEventListener("storage", syncLogin);
+
+    return () => window.removeEventListener("storage", syncLogin);
+  }, []);
+
   return (
     <HeaderContainer>
       <LeftSection>
-        {/* Logo + Nome */}
         <Link to="/home">
           <img src="/assets/logo.png" />
         </Link>
         <h1>Plenna</h1>
-        {/* Menu de navegação */}
-        {/* <Navbar /> */}
       </LeftSection>
+
       <NavMenu>
         <li><Link to="/bookscatalog">Catálogo</Link></li>
         <li><Link to="/">Mais Procurados</Link></li>
@@ -29,15 +44,10 @@ const Header: React.FC = () => {
         <li><Link to="/">Autores</Link></li>
         <li><Link to="/">Promoções</Link></li>
       </NavMenu>
-      {/* Search + ícones */}
+
       <IconsWrapper>
         <SearchWrapper>
-          <svg
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-          >
+          <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -49,18 +59,50 @@ const Header: React.FC = () => {
           <SearchInput type="text" placeholder="Search" />
         </SearchWrapper>
 
-        {/* Botão Favoritos */}
         <IconBox>
           <img src="/assets/icons/favorites.png" />
         </IconBox>
 
-        {/* Botão Carrinho */}
         <IconBox>
           <img src="/assets/icons/carrinho.png" />
         </IconBox>
-        <IconBox>
-          <Link to="/login"><img src="/assets/icons/perfil.png" /></Link>
-        </IconBox>
+
+        <ProfileWrapper>
+          <IconBox logged={logged}>
+            {!logged ? (
+              <Link to="/login">
+                <ProfileIcon src="/assets/icons/perfil.png" logged={false} />
+              </Link>
+            ) : (
+              <>
+                <ProfileIcon
+                  src="/assets/icons/perfil.png"
+                  logged={true}
+                  onClick={() => setOpenMenu((p) => !p)}
+                />
+
+                {openMenu && (
+                  <DropdownMenu>
+                    <DropdownItem>
+                      <Link to="/userprofile">Perfil</Link>
+                    </DropdownItem>
+
+                    <DropdownItem
+                      style={{ color: "red" }}
+                      onClick={() => {
+                        logout();
+                        setLogged(false);
+                        window.location.href = "/home";
+                      }}
+                    >
+                      Logout
+                    </DropdownItem>
+                  </DropdownMenu>
+                )}
+              </>
+            )}
+          </IconBox>
+        </ProfileWrapper>
       </IconsWrapper>
     </HeaderContainer>
   );

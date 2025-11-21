@@ -88,10 +88,14 @@ export const IconsWrapper = styled.div`
   }
 `;
 
-export const IconBox = styled.div`
+interface IconBoxProps {
+  logged?: boolean;
+}
+
+export const IconBox = styled.div<IconBoxProps>`
   width: 42px;
   height: 42px;
-  border: 1px solid #d1d5db;
+  border: ${({ logged }) => (logged ? "2px solid green" : "1px solid #d1d5db")};
   border-radius: 10px;
 
   display: grid;
@@ -108,5 +112,58 @@ export const IconBox = styled.div`
 
   &:hover {
     background: #e5e7eb;
+  }
+`;
+
+export const ProfileWrapper = styled.div`
+  position: relative;
+`;
+
+export const ProfileIcon = styled.img<{ logged: boolean }>`
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+
+  border: ${(props) => (props.logged ? "2px solid #1DB954" : "none")};
+  padding: 2px;
+  transition: 0.2s;
+`;
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+  top: 52px;
+  right: 0;
+
+  width: 170px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  padding: 8px 0;
+  z-index: 20;
+
+  animation: fadeIn 0.18s ease-out;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+`;
+
+export const DropdownItem = styled.div`
+  padding: 12px 18px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Arial", sans-serif;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 `;
