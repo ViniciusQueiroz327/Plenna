@@ -21,7 +21,7 @@ const TeamSection: React.FC = () => {
 
         <TeamCard>
           <img src="/assets/team/Guilherme_Esteves.png" />
-          <h3>Guilher Esteves</h3>
+          <h3>Guilherme Esteves</h3>
           <p>CEO & Fundador</p>
         </TeamCard>
 

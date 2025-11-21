@@ -24,6 +24,6 @@ export const LeftSection = styled.div`
     font-size: 2.3rem;
     font-weight: 700;
     color: #1f404e;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-title);
   }
 `;

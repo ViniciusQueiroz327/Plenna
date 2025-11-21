@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 export const CarouselContainer = styled.div`
-  width: 100%;
-  max-width: 1200px;
   height: 500px;
-  margin: 2rem auto;
   background: #f3f4f6;
 
   border-radius: 18px;
@@ -88,7 +85,7 @@ export const SlideTitle = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: 'Times New Roman', sans-serif;
+  font-family: var(--font-main);
   color: #1f2937;
 `;
 

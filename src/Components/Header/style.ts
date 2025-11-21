@@ -20,27 +20,27 @@ export const LeftSection = styled.div`
     width: 70px;
   }
 
-  h1 {
-    font-size: 2.3rem;
+  h3 {
     font-weight: 700;
     color: #1f404e;
-    font-family: "Trebuchet MS", sans-serif;
+    font-size: var(--font-size-h3);
+    font-family: var(--font-title);
   }
 `;
 
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.4rem;
   list-style: none;
 
   li a {
-    font-size: 1.3rem;
     color: #1f2937;
-    font-weight: 500;
+    font-weight: 400;
     text-decoration: none;
     transition: 0.2s;
-    font-family: 'Times New Roman', sans-serif;
+    font-size: var(--font-size-button-sm);
+    font-family: var(--font-main);
 
     &:hover {
       color: #1f404e;
@@ -70,7 +70,7 @@ export const SearchInput = styled.input`
   border: none;
   outline: none;
   flex: 1;
-  font-size: 0.95rem;
+  font-size: var(--font-size-button-sm);
   color: #374151;
 
   &::placeholder {
@@ -156,7 +156,7 @@ export const DropdownItem = styled.div`
   color: #333;
   cursor: pointer;
   transition: 0.2s;
-  font-family: "Arial", sans-serif;
+  font-family: var(--font-main);
 
   &:hover {
     background: #f3f4f6;

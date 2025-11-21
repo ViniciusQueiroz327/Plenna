@@ -5,7 +5,7 @@ export const Container = styled.section`
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 2rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
   color: #374151;
 `;
 
@@ -16,7 +16,7 @@ export const PageHeading = styled.h1`
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const MetaText = styled.p`
@@ -24,7 +24,7 @@ export const MetaText = styled.p`
   color: #6b7280;
   font-size: 0.9rem;
   margin-bottom: 3rem;
-  font-family: "Times New Roman", sans-serif;
+  font-family: var(--font-main);
 `;
 
 export const Section = styled.div`
@@ -36,7 +36,7 @@ export const SectionTitle = styled.h2`
   font-weight: 700;
   color: #1f404e;
   margin-bottom: 0.8rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const Paragraph = styled.p`
@@ -44,13 +44,13 @@ export const Paragraph = styled.p`
   line-height: 1.7;
   color: #374151;
   margin-bottom: 1rem;
-  font-family: "Times New Roman", sans-serif;
+  font-family: var(--font-main);
 
   a {
     color: #137fec;
     font-weight: 600;
     text-decoration: none;
-    font-family: "Times New Roman", sans-serif;
+    font-family: var(--font-main);
 
     &:hover {
       text-decoration: underline;
@@ -67,7 +67,7 @@ export const List = styled.ul`
     margin-bottom: 0.6rem;
     font-size: 1.1rem;
     line-height: 1.6;
-    font-family: "Times New Roman", sans-serif;
+    font-family: var(--font-main);
     color: #374151;
   }
 `;

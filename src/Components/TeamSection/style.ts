@@ -11,7 +11,7 @@ export const TeamContainer = styled.section`
     color: #1f404e;
     margin-bottom: 2rem;
     text-align: center;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-title);
   }
 `;
 
@@ -36,12 +36,12 @@ export const TeamCard = styled.div`
   h3 {
     font-size: 1.4rem;
     color: #1f404e;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-title);
   }
 
   p {
     font-size: 1rem;
     color: #6b7280;
-    font-family: "Times New Roman", sans-serif;
+    font-family: var(--font-main);
   }
 `;

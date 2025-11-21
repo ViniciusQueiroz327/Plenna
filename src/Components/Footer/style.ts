@@ -25,7 +25,7 @@ export const FooterContent = styled.div`
 export const FooterCopy = styled.p`
   font-size: 1rem;
   color: #475569;
-  font-family: 'Times New Roman', sans-serif;
+  font-family: var(--font-main);
 `;
 
 export const FooterLinks = styled.nav`
@@ -37,7 +37,7 @@ export const FooterLinks = styled.nav`
     color: #475569;
     text-decoration: none;
     font-weight: 500;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: var(--font-main);
     transition: 0.2s ease;
 
     &:hover {

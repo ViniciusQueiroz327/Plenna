@@ -37,13 +37,13 @@ export const UserBox = styled.div`
     strong {
       font-size: 1rem;
       color: #1f404e;
-      font-family: "Trebuchet MS", sans-serif;
+      font-family: var(--font-title);
     }
 
     span {
       font-size: 0.85rem;
       color: #6b7280;
-      font-family: "Trebuchet MS", sans-serif;
+      font-family: var(--font-title);
     }
   }
 `;
@@ -54,7 +54,7 @@ export const Menu = styled.nav`
   flex-direction: column;
   gap: 0.5rem;
   color: #1f404e;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   img {
     width: 20px;
@@ -89,7 +89,7 @@ export const Logout = styled.div`
   color: #e63946;
   border-radius: 0.5rem;
   font-weight: bold;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   img {
     width: 20px;

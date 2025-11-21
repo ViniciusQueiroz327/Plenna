@@ -17,7 +17,7 @@ export const TitleBox = styled.div`
   text-align: center;
 
   h1 {
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-title);
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px;
@@ -26,7 +26,7 @@ export const TitleBox = styled.div`
 
   p {
     color: #6b7280;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: var(--font-main);
   }
 `;
 
@@ -40,7 +40,7 @@ export const SubmitButton = styled.button`
   font-size: 1.2rem;
   cursor: pointer;
   transition: 0.2s;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   &:hover {
     background: #0f6ec9;

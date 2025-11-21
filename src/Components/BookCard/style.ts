@@ -35,12 +35,12 @@ export const BookImage = styled.img`
 `;
 
 export const BookTitle = styled.h3`
-  font-size: 1.1rem;
+  font-size: var(--font-size-label);
   font-weight: 500;
   color: #1f2937;
   text-align: center;
-  font-family: 'Times New Roman', sans-serif;
-
+  font-family: var(--font-main);
+  text-transform: capitalize;
   max-width: 180px;
   line-height: 1.3;
 `;

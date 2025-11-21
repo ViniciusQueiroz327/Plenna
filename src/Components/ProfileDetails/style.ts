@@ -5,7 +5,7 @@ export const Title = styled.h2`
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1f404e;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const Subtitle = styled.p`
@@ -43,7 +43,7 @@ export const Input = styled.input`
   border: 1px solid #cfdbe7;
   outline: none;
   color: #374151;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   &:focus {
     border-color: #137fec;

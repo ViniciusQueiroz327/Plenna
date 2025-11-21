@@ -8,7 +8,7 @@ const BestSellers: React.FC = () => {
 
   return (
     <BestSellersWrapper>
-      <h1>Mais Vendidos</h1>
+      <h2>Mais Vendidos</h2>
 
       <BestSellersContainer>
         {bestSellers.map((book, index) => (

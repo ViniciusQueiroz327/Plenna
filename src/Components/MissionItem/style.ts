@@ -13,13 +13,13 @@ export const ItemBox = styled.div`
     font-size: 1.4rem;
     color: #1f404e;
     margin-bottom: 0.5rem;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-title);
   }
 
   p {
     font-size: 1.3rem;
     color: #4b5563;
     line-height: 1.6;
-    font-family: "Times New Roman", sans-serif;
+    font-family: var(--font-main);
   }
 `;

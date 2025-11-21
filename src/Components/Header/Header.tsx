@@ -35,7 +35,7 @@ const Header: React.FC = () => {
         <Link to="/home">
           <img src="/assets/logo.png" />
         </Link>
-        <h1>Plenna</h1>
+        <h3>Plenna</h3>
       </LeftSection>
 
       <NavMenu>
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
         <li><Link to="/">Mais Procurados</Link></li>
         <li><Link to="/">Gêneros</Link></li>
         <li><Link to="/">Autores</Link></li>
-        <li><Link to="/">Promoções</Link></li>
+        <li><Link to="/donate">Doar</Link></li>
       </NavMenu>
 
       <IconsWrapper>

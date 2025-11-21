@@ -5,14 +5,14 @@ export const Title = styled.h2`
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1f404e;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const Subtitle = styled.p`
   color: #374151;
   border-bottom: 1px solid #cfdbe7;
   padding-bottom: 1.5rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   @media (prefers-color-scheme: dark) {
     border-color: #364a5f;
@@ -33,7 +33,7 @@ export const TableContainer = styled.div`
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const TableHeader = styled.th`
@@ -107,7 +107,7 @@ export const ActionButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   color: #1f404e;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   &:hover {
     background: #ffffffff;

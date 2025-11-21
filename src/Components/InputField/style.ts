@@ -9,14 +9,14 @@ export const FieldContainer = styled.label`
 export const Label = styled.p`
   font-size: 1rem;
   color: #1f404e;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const Input = styled.input`
   height: 35px;
   padding: 0 15px;
   font-size: 0.8rem;
-  font-family: 'Times New Roman', sans-serif;
+  font-family: var(--font-main);
 
   border: 1px solid #cfdbe7;
   background: white;

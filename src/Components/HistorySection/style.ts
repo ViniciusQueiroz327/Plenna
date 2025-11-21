@@ -15,14 +15,14 @@ export const HistoryContainer = styled.section`
     font-size: 2.5rem;
     color: #1f404e;
     margin-bottom: 1rem;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: var(--font-title);
   }
 
   p {
     font-size: 1.3rem;
     line-height: 1.7;
     color: #374151;
-    font-family: "Times New Roman", sans-serif;
+    font-family: var(--font-main);
     max-width: 900px;
   }
 `;

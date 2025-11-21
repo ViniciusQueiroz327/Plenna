@@ -3,29 +3,31 @@ import { Header } from "../../Components/Header/Header";
 import { BooksWrapper, BooksContainer } from "./style";
 import { BookCard } from "../../Components/BookCard/BookCard";
 import books from "../../../books.json";
+import { PageContainer } from "../../Components/PageContainer/PageContainer";
 
-const BooksCatalog = ( ) => {
+const BooksCatalog = () => {
     return (<>
-        <div className="home">
-      <header className="header">
-        <Header />
-      </header>
-      <BooksWrapper>
-            <h1>Catálogo de Livros</h1>
+      <div className="home">
+      <Header />
       
+      <PageContainer>
+        <BooksWrapper>
+          <h2>Catálogo de Livros</h2>
+    
             <BooksContainer>
               {books.map((book, index) => (
                 <BookCard
-                  key={index}
-                  image={book.image}
-                  title={book.title}
+                key={index}
+                image={book.image}
+                title={book.title}
+                
                 />
               ))}
             </BooksContainer>
-          </BooksWrapper>
-      <footer className="footer">
-        <Footer />
-      </footer>
+        </BooksWrapper>
+      </PageContainer>
+
+      <Footer />
     </div>
     </>)
 }

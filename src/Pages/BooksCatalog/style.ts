@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 export const BooksWrapper = styled.section`
   width: 100%;
-  max-width: 1500px;
-  margin: 4rem auto;
+  // max-width: 1500px;
+  margin: 2rem auto;
   padding: 0 2rem;
 
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.2rem;
 
-  h1 {
-    font-size: 2rem;
+  h2 {
     color: #111;
-    font-family: 'Times New Roman', sans-serif;
+    font-size: var(--font-size-h2);
+    font-family: var(--font-title);
     font-weight: bold;
-    margin-left: 0.3rem;
+    margin-left: 2.5rem;
   }
 `;
 

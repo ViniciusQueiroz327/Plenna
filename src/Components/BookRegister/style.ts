@@ -5,7 +5,7 @@ export const Title = styled.h2`
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #1f404e;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const Subtitle = styled.p`
@@ -34,7 +34,7 @@ export const InputLabel = styled.label`
   display: block;
   margin-bottom: 0.4rem;
   font-weight: 600;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   @media (prefers-color-scheme: dark) {
     color: #1f404e;
@@ -48,7 +48,7 @@ export const Input = styled.input`
   border: 1px solid #cfdbe7;
   outline: none;
   color: #374151;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 
   &:focus {
     border-color: #137fec;

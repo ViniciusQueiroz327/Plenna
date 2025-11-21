@@ -5,7 +5,7 @@ export const TermsWrapper = styled.section`
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 2rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
   color: #374151;
 `;
 
@@ -16,7 +16,7 @@ export const TermsHeader = styled.h1`
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const LastUpdated = styled.p`
@@ -24,7 +24,7 @@ export const LastUpdated = styled.p`
   color: #6b7280;
   font-size: 0.9rem;
   margin-bottom: 3rem;
-  font-family: "Times New Roman", sans-serif;
+  font-family: var(--font-main);
 `;
 
 export const TermsSection = styled.div`
@@ -36,7 +36,7 @@ export const TermsTitle = styled.h2`
   font-weight: 700;
   color: #1f404e;
   margin-bottom: 0.8rem;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: var(--font-title);
 `;
 
 export const TermsParagraph = styled.p`
@@ -44,13 +44,13 @@ export const TermsParagraph = styled.p`
   line-height: 1.7;
   color: #374151;
   margin-bottom: 1rem;
-  font-family: "Times New Roman", sans-serif;
+  font-family: var(--font-main);
 
   a {
     color: #137fec;
     font-weight: 600;
     text-decoration: none;
-    font-family: "Times New Roman", sans-serif;
+    font-family: var(--font-main);
 
     &:hover {
       text-decoration: underline;
