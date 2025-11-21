@@ -2,7 +2,7 @@ import { Home } from './Pages/Home/Home';
 import { About } from './Pages/About/About';
 // import { BookRegister } from './Pages/BookRegister/BookRegister';
 import { BooksCatalog } from './Pages/BooksCatalog/BooksCatalog';
-// import { Profile } from './Pages/Profile/Profile';
+import { UserProfile } from './Pages/UserProfile/UserProfile';
 import { Login } from './Pages/Login/Login';
 import { Register } from './Pages/Register/Register';
 import { PrivacyPolicy } from './Pages/PrivacyPolicy/PrivacyPolicy';
@@ -26,6 +26,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
         <Route path='/serviceterms' element={<ServiceTerms/>}/>
+        <Route path='/userprofile' element={<UserProfile/>}/>
         {/* 
         
         <Route path="/bookregister" element={<BookRegister />}/>

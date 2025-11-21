@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const LoginCard = styled.div`
+export const RegisterCard = styled.div`
+  border: 1px solid #364a5f;
   width: 100%;
   max-width: 400px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
   padding: 2rem 2rem;
   background-color: #f3f4f6;
   border-radius: 20px

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const LoginCard = styled.div`
+  border: 1px solid #364a5f;
   width: 100%;
   max-width: 400px;
   margin: auto;

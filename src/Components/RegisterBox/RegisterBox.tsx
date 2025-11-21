@@ -1,11 +1,11 @@
 import React from "react";
-import { LoginCard, TitleBox, SubmitButton, LinksBox } from "./style";
+import { RegisterCard, TitleBox, SubmitButton, LinksBox } from "./style";
 import { InputField } from "../../Components/InputField/InputField";
 import { Link } from "react-router-dom";
 
 const RegisterBox: React.FC = () => {
   return (
-    <LoginCard>
+    <RegisterCard>
       <TitleBox>
         <h1>Novo por Aqui?</h1>
         <p>Desbloqueie um mundo de histórias</p>
@@ -21,6 +21,18 @@ const RegisterBox: React.FC = () => {
         label="E-mail"
         placeholder="Insira seu e-mail"
         type="email"
+      />
+
+      <InputField
+        label="Endereço"
+        placeholder="Insira seu endereço"
+        type="text"
+      />
+
+      <InputField
+        label="Telefone"
+        placeholder="Insira seu número de telefone"
+        type="phone"
       />
 
       <InputField
@@ -42,7 +54,7 @@ const RegisterBox: React.FC = () => {
           Já tem uma conta? <Link to="/login">Entrar</Link>
         </p>
       </LinksBox>
-    </LoginCard>
+    </RegisterCard>
   );
 };
 

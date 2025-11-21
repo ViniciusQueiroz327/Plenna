@@ -13,7 +13,7 @@ export const Label = styled.p`
 `;
 
 export const Input = styled.input`
-  height: 48px;
+  height: 35px;
   padding: 0 15px;
   font-size: 0.8rem;
   font-family: 'Times New Roman', sans-serif;
