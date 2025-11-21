@@ -14,7 +14,8 @@ import {
   DropdownItem
 } from "./style";
 
-import { isLoggedIn, logout, getLoggedUser } from "../../auth";
+import { isLoggedIn, logout } from "../../auth";
+// import { isLoggedIn, logout, getLoggedUser } from "../../auth";
 
 const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
