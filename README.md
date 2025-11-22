@@ -16,7 +16,7 @@
 
 <h1 align="center"> Descrição do Projeto 💻 </h1> 
 
-Estamos no 6 semestre de Ciencias da Computação e estamos fazendo o nosso Projeto Integrador com o intuito de criar projetos para ajudar a sociedade, principalmente pequenos comércios. Além disso, o nosso projeto tem como intuito facilitar o acesso à leitura e promover o incentivo a doação de livros.
+Estamos no 8 semestre de Ciencias da Computação e estamos fazendo o nosso Projeto Integrador com o intuito de criar projetos para ajudar a sociedade, principalmente pequenos comércios. Além disso, o nosso projeto tem como intuito facilitar o acesso à leitura e promover o incentivo a doação de livros.
 
 <h1 align="center"> Livraria 📚 </h1> 
 
