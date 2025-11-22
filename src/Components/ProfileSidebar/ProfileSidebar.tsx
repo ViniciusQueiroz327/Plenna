@@ -53,7 +53,13 @@ const ProfileSidebar: React.FC<ProfileSidebarProps> = ({
           <div
             key={item.key}
             className={activeComponent === item.key ? "active" : ""}
-            onClick={() => setActiveComponent(item.key)}
+            onClick={() => {
+              if (item.key === "register-book") {
+                navigate("/donate");
+                return;
+              }
+              setActiveComponent(item.key);
+            }}
           >
             <img src={item.icon} alt="" />
             {item.label}

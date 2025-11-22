@@ -6,7 +6,6 @@ import { Footer } from "../../Components/Footer/Footer";
 import { ProfileSidebar } from "../../Components/ProfileSidebar/ProfileSidebar";
 import { ProfileDetails } from "../../Components/ProfileDetails/ProfileDetails";
 import { OrdersHistory } from "../../Components/OrdersHistory/OrdersHistory";
-import { BookRegister } from "../../Components/BookRegister/BookRegister";
 // import { SavedAddresses } from "../../Components/SavedAddresses/SavedAddresses";
 // import { Settings } from "../../Components/Settings/Settings";
 
@@ -19,8 +18,6 @@ const UserProfile: React.FC = () => {
         return <ProfileDetails />;
       case "orders":
         return <OrdersHistory />;
-      case "register-book":
-        return <BookRegister />;
       // case "addresses":
       //   return <SavedAddresses />;
       // case "settings":

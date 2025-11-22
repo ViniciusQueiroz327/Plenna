@@ -1,6 +1,5 @@
 import { Home } from './Pages/Home/Home';
 import { About } from './Pages/About/About';
-// import { BookRegister } from './Pages/BookRegister/BookRegister';
 import { BooksCatalog } from './Pages/BooksCatalog/BooksCatalog';
 import { UserProfile } from './Pages/UserProfile/UserProfile';
 import { Login } from './Pages/Login/Login';
@@ -31,10 +30,6 @@ function App() {
         <Route path='/serviceterms' element={<ServiceTerms/>}/>
         <Route path='/userprofile' element={<UserProfile/>}/>
         <Route path='/donate' element={<DonateBooks/>}/>
-        {/* 
-        
-        <Route path="/bookregister" element={<BookRegister />}/>
-        <Route path="/profile" element={<Profile />}/> */}
       </Routes>
     </Router>
   );
