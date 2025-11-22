@@ -37,13 +37,13 @@ export const UserBox = styled.div`
     strong {
       font-size: 1rem;
       color: #1f404e;
-      font-family: var(--font-title);
+      font-family: var(--font-main);
     }
 
     span {
       font-size: 0.85rem;
       color: #6b7280;
-      font-family: var(--font-title);
+      font-family: var(--font-main);
     }
   }
 `;

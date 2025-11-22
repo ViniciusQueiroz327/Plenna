@@ -9,13 +9,10 @@ const FormsHeader: React.FC = () => {
   return (
     <HeaderContainer>
       <LeftSection>
-        {/* Logo + Nome */}
         <Link to="/home">
           <img src="/assets/logo.png" />
         </Link>
         <h1>Plenna</h1>
-        {/* Menu de navegação */}
-        {/* <Navbar /> */}
       </LeftSection>
     </HeaderContainer>
   );

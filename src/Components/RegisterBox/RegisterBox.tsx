@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RegisterCard, TitleBox, SubmitButton, LinksBox } from "./style";
 import { InputField } from "../../Components/InputField/InputField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface UserForm {
   nome: string;
@@ -13,6 +13,8 @@ interface UserForm {
 }
 
 const RegisterBox: React.FC = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState<UserForm>({
     nome: "",
     email: "",
@@ -37,26 +39,25 @@ const RegisterBox: React.FC = () => {
     setLoading(true);
     try {
       const response = await fetch("https://plenna-api.onrender.com/api/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nome: form.nome,
-        email: form.email,
-        endereco: form.endereco,
-        telefone: form.telefone,
-        senha: form.senha,
-      }),
-    });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: form.nome,
+          email: form.email,
+          endereco: form.endereco,
+          telefone: form.telefone,
+          senha: form.senha,
+        }),
+      });
 
       if (!response.ok) {
         let errorMessage = `Erro ao registrar usuário (status ${response.status})`;
         try {
           const errorData = await response.json();
           if (errorData && errorData.message) errorMessage = errorData.message;
-        } catch {
-        }
+        } catch {}
         throw new Error(errorMessage);
       }
 
@@ -69,6 +70,7 @@ const RegisterBox: React.FC = () => {
 
       console.log("Usuário criado:", data);
       alert("Registro realizado com sucesso!");
+
       setForm({
         nome: "",
         email: "",
@@ -77,6 +79,10 @@ const RegisterBox: React.FC = () => {
         senha: "",
         confirmarSenha: "",
       });
+
+      // 👉 Redireciona para login após sucesso
+      navigate("/login");
+
     } catch (error: any) {
       console.error(error);
       alert(error.message || "Falha ao registrar usuário");

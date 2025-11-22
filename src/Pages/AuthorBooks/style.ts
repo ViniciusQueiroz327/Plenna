@@ -1,23 +1,25 @@
 import styled from "styled-components";
 
-export const BestSellersWrapper = styled.section`
+export const BooksWrapper = styled.section`
   width: 100%;
-  margin: 4rem auto;
+  margin: 2rem auto;
+  padding: 0 2rem;
 
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.2rem;
 
   h2 {
-    font-size: var(--font-size-h2);
     color: #111;
+    font-size: var(--font-size-h2);
     font-family: var(--font-title);
     font-weight: bold;
     margin-left: 2.5rem;
+    text-transform: capitalize;
   }
 `;
 
-export const BestSellersContainer = styled.div`
+export const BooksContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

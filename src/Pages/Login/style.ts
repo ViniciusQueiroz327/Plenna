@@ -6,4 +6,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   background: #ffffffff;
   color: #0d141b;
+  * {
+    font-family: var(--font-main);
+  }
 `;

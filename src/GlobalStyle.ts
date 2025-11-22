@@ -11,15 +11,8 @@ export const GlobalStyle = createGlobalStyle `
         --shadow-1: 0 0 50px rgba(0, 0, 0, 0.5);
         --shadow-2: 4 8 10px rgba(0, 0, 0, 0.5);
 
-        // --font-title: 'Poppins', sans-serif;
-        // --font-main: 'Inter', sans-serif;
-
         --font-title: 'Merriweather', sans-serif;
         --font-main: 'Roboto', sans-serif;
-
-        // --font-title: 'Playfair Display', sans-serif;
-        // --font-main: 'Noto Sans Georgian', sans-serif;
-
 
         --font-size-base: 1.6rem; /* 16px */
 

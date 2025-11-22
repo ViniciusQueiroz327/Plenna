@@ -4,6 +4,9 @@ export const Container = styled.div`
   min-height: 80vh;
   width: 100%;
   background: #ffffffff;
+  *{
+    font-family: var(--font-main);
+  }
 
   @media (prefers-color-scheme: dark) {
     background: #ffffffff;

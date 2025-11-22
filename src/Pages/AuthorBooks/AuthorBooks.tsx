@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Footer } from "../../Components/Footer/Footer";
 import { Header } from "../../Components/Header/Header";
 import { BooksWrapper, BooksContainer } from "./style";
 import { BookCard } from "../../Components/BookCard/BookCard";
 import { PageContainer } from "../../Components/PageContainer/PageContainer";
-import { DonateBookButton } from "../../Components/DonateBookButton/DonateBookButton";
 
 interface Book {
   id: string;
@@ -12,22 +12,26 @@ interface Book {
   capa: string;
 }
 
-const BooksCatalog = () => {
+const AuthorBooks = () => {
+  const { name } = useParams();
+  const authorName = decodeURIComponent(name || "");
+
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://plenna-api.onrender.com/api/books")
+    fetch(`https://plenna-api.onrender.com/api/books/author/${encodeURIComponent(authorName)}`)
+    // https://plenna-api.onrender.com/api/books/author/
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Erro ao buscar livros:", err);
+        console.error("Erro ao buscar livros do autor:", err);
         setLoading(false);
       });
-  }, []);
+  }, [authorName]);
 
   return (
     <>
@@ -36,16 +40,17 @@ const BooksCatalog = () => {
 
         <PageContainer>
           <BooksWrapper>
-            <h2>Catálogo de Livros</h2>
+            <h2>Livros de {authorName}</h2>
 
             {loading ? (
               <p>Carregando livros...</p>
+            ) : books.length === 0 ? (
+              <p>Nenhum livro encontrado para este autor.</p>
             ) : (
               <BooksContainer>
                 {books.map((book) => (
                   <BookCard
                     key={book.id}
-                    id={book.id}
                     image={book.capa}
                     title={book.titulo}
                   />
@@ -53,8 +58,6 @@ const BooksCatalog = () => {
               </BooksContainer>
             )}
           </BooksWrapper>
-
-          <DonateBookButton />
         </PageContainer>
 
         <Footer />
@@ -63,4 +66,4 @@ const BooksCatalog = () => {
   );
 };
 
-export { BooksCatalog };
+export { AuthorBooks };

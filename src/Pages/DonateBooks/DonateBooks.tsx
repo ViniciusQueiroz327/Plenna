@@ -15,7 +15,7 @@ import {
 
 import { useState } from "react";
 import { useRef } from "react";
-
+import { useNavigate } from "react-router-dom"
 
 interface Book {
     titulo?: string;
@@ -27,6 +27,7 @@ interface Book {
 }
 
 const DonateBooks = () => {
+    const navigate = useNavigate();
     const [file, setFile] = useState<File | null>(null);
     const [book, setBook] = useState<Book>({ titulo: "", autor: "", sinopse: "", editora: "", disponibilidade: true });
 
@@ -68,6 +69,7 @@ const DonateBooks = () => {
             if (!response.ok) throw new Error("Erro ao enviar dados");
 
             alert("Livro cadastrado com sucesso!");
+            navigate("/home")
         } catch (err) {
             console.error(err);
             alert("Falha ao enviar livro.");

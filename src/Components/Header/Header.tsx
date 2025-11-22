@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   HeaderContainer,
@@ -13,20 +13,32 @@ import {
   DropdownMenu,
   DropdownItem
 } from "./style";
-
 import { isLoggedIn, logout } from "../../auth";
-// import { isLoggedIn, logout, getLoggedUser } from "../../auth";
 
 const Header: React.FC = () => {
   const [openMenu, setOpenMenu] = React.useState(false);
   const [logged, setLogged] = React.useState<boolean>(isLoggedIn());
+  const menuRef = useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    // Reage caso outro componente altere login.
     const syncLogin = () => setLogged(isLoggedIn());
     window.addEventListener("storage", syncLogin);
 
     return () => window.removeEventListener("storage", syncLogin);
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpenMenu(false);  // 👈 Fechar menu quando clicar fora
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -40,8 +52,8 @@ const Header: React.FC = () => {
 
       <NavMenu>
         <li><Link to="/bookscatalog">Catálogo</Link></li>
-        <li><Link to="/">Mais Procurados</Link></li>
-        <li><Link to="/">Gêneros</Link></li>
+        {/* <li><Link to="/">Mais Procurados</Link></li> */}
+        {/* <li><Link to="/">Gêneros</Link></li> */}
         <li><Link to="/">Autores</Link></li>
         <li><Link to="/donate">Doar</Link></li>
       </NavMenu>
@@ -60,50 +72,51 @@ const Header: React.FC = () => {
           <SearchInput type="text" placeholder="Search" />
         </SearchWrapper>
 
-        <IconBox>
-          <img src="/assets/icons/favorites.png" />
+        <IconBox className="deactivated">
+          <img src="/assets/icons/favorites.png" className="deactivatedImg"/>
         </IconBox>
 
-        <IconBox>
-          <img src="/assets/icons/carrinho.png" />
+        <IconBox className="deactivated">
+          <img src="/assets/icons/carrinho.png" className="deactivatedImg"/>
         </IconBox>
 
-        <ProfileWrapper>
-          <IconBox logged={logged}>
-            {!logged ? (
-              <Link to="/login">
-                <ProfileIcon src="/assets/icons/perfil.png" logged={false} />
-              </Link>
-            ) : (
-              <>
-                <ProfileIcon
-                  src="/assets/icons/perfil.png"
-                  logged={true}
-                  onClick={() => setOpenMenu((p) => !p)}
-                />
+        <div ref={menuRef}>
+          <ProfileWrapper
+            onClick={() => {
+              if (!logged) {
+                window.location.href = "/login";
+                return;
+              }
+              setOpenMenu((p) => !p);
+            }}
+          >
+            <IconBox logged={logged}>
+              <ProfileIcon
+                src="/assets/icons/perfil.png"
+                logged={logged}
+              />
+            </IconBox>
 
-                {openMenu && (
-                  <DropdownMenu>
-                    <DropdownItem>
-                      <Link to="/userprofile">Perfil</Link>
-                    </DropdownItem>
+            {openMenu && logged && (
+              <DropdownMenu>
+                <Link to="/userprofile" style={{ textDecoration: "none" }}>
+                  <DropdownItem>Perfil</DropdownItem>
+                </Link>
 
-                    <DropdownItem
-                      style={{ color: "red" }}
-                      onClick={() => {
-                        logout();
-                        setLogged(false);
-                        window.location.href = "/home";
-                      }}
-                    >
-                      Logout
-                    </DropdownItem>
-                  </DropdownMenu>
-                )}
-              </>
+                <DropdownItem
+                  style={{ color: "red" }}
+                  onClick={() => {
+                    logout();
+                    setLogged(false);
+                    window.location.href = "/home";
+                  }}
+                >
+                  Logout
+                </DropdownItem>
+              </DropdownMenu>
             )}
-          </IconBox>
-        </ProfileWrapper>
+          </ProfileWrapper>
+        </div>
       </IconsWrapper>
     </HeaderContainer>
   );

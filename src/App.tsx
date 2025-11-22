@@ -7,7 +7,7 @@ import { Register } from './Pages/Register/Register';
 import { PrivacyPolicy } from './Pages/PrivacyPolicy/PrivacyPolicy';
 import { ServiceTerms } from './Pages/ServiceTerms/ServiceTerms';
 import { DonateBooks } from './Pages/DonateBooks/DonateBooks';
-
+import { AuthorBooks } from './Pages/AuthorBooks/AuthorBooks';
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,6 +30,7 @@ function App() {
         <Route path='/serviceterms' element={<ServiceTerms/>}/>
         <Route path='/userprofile' element={<UserProfile/>}/>
         <Route path='/donate' element={<DonateBooks/>}/>
+        <Route path="/author/:name" element={<AuthorBooks />} />
       </Routes>
     </Router>
   );

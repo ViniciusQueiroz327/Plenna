@@ -43,7 +43,7 @@ export const Input = styled.input`
   border: 1px solid #cfdbe7;
   outline: none;
   color: #374151;
-  font-family: var(--font-title);
+  font-family: var(--font-main);
 
   &:focus {
     border-color: #137fec;

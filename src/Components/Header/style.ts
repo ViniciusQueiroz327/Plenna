@@ -31,7 +31,7 @@ export const LeftSection = styled.div`
 export const NavMenu = styled.ul`
   display: flex;
   align-items: center;
-  gap: 2.4rem;
+  gap: 3rem;
   list-style: none;
 
   li a {
@@ -39,7 +39,7 @@ export const NavMenu = styled.ul`
     font-weight: 400;
     text-decoration: none;
     transition: 0.2s;
-    font-size: var(--font-size-button-sm);
+    font-size: var(--font-size-button-md);
     font-family: var(--font-main);
 
     &:hover {
@@ -56,7 +56,7 @@ export const SearchWrapper = styled.div`
   border-radius: 10px;
   padding: 0 0.75rem;
   height: 42px;
-  width: 260px;
+  width: 300px;
   gap: 0.5rem;
 
   svg {
@@ -93,6 +93,8 @@ interface IconBoxProps {
 }
 
 export const IconBox = styled.div<IconBoxProps>`
+  pointer-events: auto;
+
   width: 42px;
   height: 42px;
   border: ${({ logged }) => (logged ? "2px solid green" : "1px solid #d1d5db")};
@@ -101,7 +103,6 @@ export const IconBox = styled.div<IconBoxProps>`
   display: grid;
   place-items: center;
 
-  cursor: pointer;
   transition: 0.2s;
 
   svg {
@@ -110,8 +111,8 @@ export const IconBox = styled.div<IconBoxProps>`
     color: #374151;
   }
 
-  &:hover {
-    background: #e5e7eb;
+  &.deactivated, img.deactivatedImg {
+    opacity: 0.5;
   }
 `;
 
@@ -120,11 +121,12 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const ProfileIcon = styled.img<{ logged: boolean }>`
+  pointer-events: auto;
+
   width: 28px;
   height: 28px;
   cursor: pointer;
   border-radius: 50%;
-
   border: ${(props) => (props.logged ? "2px solid #1DB954" : "none")};
   padding: 2px;
   transition: 0.2s;

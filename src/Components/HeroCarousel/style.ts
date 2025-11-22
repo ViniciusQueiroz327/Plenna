@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
+import { 
+  BookCardContainer as BaseCard, 
+  BookImage as BaseImage,
+} from "../BookCard/style";
+
 export const CarouselContainer = styled.div`
-  height: 500px;
+  height: 600px;
   background: #f3f4f6;
 
   border-radius: 18px;
@@ -9,7 +14,30 @@ export const CarouselContainer = styled.div`
 
   position: relative;
 
-    .arrow {
+  ${BaseCard} {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    cursor: default;
+    transition: none;
+
+    &:hover {
+      transform: none;
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  ${BaseImage} {
+    width: auto !important;
+    height: 450px !important;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
+
+  .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -34,20 +62,20 @@ export const CarouselContainer = styled.div`
 
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     transition: transform 0.2s ease, background 0.2s ease;
-    }
+  }
 
-    .arrow:hover {
+  .arrow:hover {
     background: white;
     transform: translateY(-50%) scale(1.1);
-    }
+  }
 
-    .arrow.left {
+  .arrow.left {
     left: 15px;
-    }
+  }
 
-    .arrow.right {
+  .arrow.right {
     right: 15px;
-    }
+  }
 `;
 
 export const Slide = styled.div`
@@ -75,7 +103,6 @@ export const BookImage = styled.img`
 
 export const SlideContent = styled.div`
   max-width: 500px;
-  
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -85,8 +112,6 @@ export const SlideTitle = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: var(--font-main);
-  color: #1f2937;
 `;
 
 export const DotsWrapper = styled.div`
@@ -103,9 +128,7 @@ export const Dot = styled.button<{ active: boolean }>`
   height: 10px;
   border-radius: 50%;
   border: none;
-
-  background-color: ${p => (p.active ? "#111" : "#ccc")};
+  background-color: ${(p) => (p.active ? "#111" : "#ccc")};
   cursor: pointer;
-
   transition: 0.25s;
 `;
