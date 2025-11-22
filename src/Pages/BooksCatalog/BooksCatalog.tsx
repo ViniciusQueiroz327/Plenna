@@ -4,6 +4,7 @@ import { BooksWrapper, BooksContainer } from "./style";
 import { BookCard } from "../../Components/BookCard/BookCard";
 import books from "../../../books.json";
 import { PageContainer } from "../../Components/PageContainer/PageContainer";
+import { DonateBookButton } from "../../Components/DonateBookButton/DonateBookButton";
 
 const BooksCatalog = () => {
     return (<>
@@ -25,6 +26,7 @@ const BooksCatalog = () => {
               ))}
             </BooksContainer>
         </BooksWrapper>
+        <DonateBookButton/>
       </PageContainer>
 
       <Footer />

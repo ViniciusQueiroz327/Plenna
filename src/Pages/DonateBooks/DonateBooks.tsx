@@ -50,23 +50,23 @@ const DonateBooks = () => {
 
         try {
             const payload = {
-            titulo: book.titulo || "",
-            autor: book.autor || "",
-            sinopse: book.sinopse || "",
-            capa: book.capa || file?.name,
-            disponibilidade: book.disponibilidade ?? true,
+                titulo: book.titulo || "",
+                autor: book.autor || "",
+                sinopse: book.sinopse || "",
+                capa: book.capa || file,
+                disponibilidade: book.disponibilidade ?? true,
             };
 
             const response = await fetch("https://plenna-api.onrender.com/api/book", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
             });
 
             if (!response.ok) throw new Error("Erro ao atualizar o livro");
 
-            const data = await response.json();
-            console.log("Livro atualizado:", data);
+            // const data = await response.json();
+            // console.log("Livro atualizado:", data);
             alert("Livro atualizado com sucesso!");
         } catch (err) {
             console.error(err);
