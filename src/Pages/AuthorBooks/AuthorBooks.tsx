@@ -51,6 +51,7 @@ const AuthorBooks = () => {
                 {books.map((book) => (
                   <BookCard
                     key={book.id}
+                    id={book.id}
                     image={book.capa}
                     title={book.titulo}
                   />
