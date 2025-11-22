@@ -28,8 +28,8 @@ interface Book {
 
 const DonateBooks = () => {
     const [file, setFile] = useState<File | null>(null);
-    const [book, setBook] = useState<Book>({ titulo: "", autor: "", sinopse: "", editora: "", disponibilidade: true});
-    
+    const [book, setBook] = useState<Book>({ titulo: "", autor: "", sinopse: "", editora: "", disponibilidade: true });
+
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +39,7 @@ const DonateBooks = () => {
     };
 
     const handleDelete = () => {
-    setFile(null);
+        setFile(null);
         if (fileInputRef.current) {
             fileInputRef.current.value = "";
         }
@@ -49,28 +49,28 @@ const DonateBooks = () => {
         if (!book) return;
 
         try {
-            const payload = {
-                titulo: book.titulo || "",
-                autor: book.autor || "",
-                sinopse: book.sinopse || "",
-                capa: book.capa || file,
-                disponibilidade: book.disponibilidade ?? true,
-            };
+            const formData = new FormData();
+
+            formData.append("titulo", book.titulo || "");
+            formData.append("autor", book.autor || "");
+            formData.append("sinopse", book.sinopse || "");
+            formData.append("disponibilidade", String(book.disponibilidade ?? true));
+
+            if (file) {
+                formData.append("capa", file);
+            }
 
             const response = await fetch("https://plenna-api.onrender.com/api/book", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
+                body: formData,
             });
 
-            if (!response.ok) throw new Error("Erro ao atualizar o livro");
+            if (!response.ok) throw new Error("Erro ao enviar dados");
 
-            // const data = await response.json();
-            // console.log("Livro atualizado:", data);
-            alert("Livro atualizado com sucesso!");
+            alert("Livro cadastrado com sucesso!");
         } catch (err) {
             console.error(err);
-            alert("Falha ao atualizar o livro.");
+            alert("Falha ao enviar livro.");
         }
     };
 
@@ -84,39 +84,39 @@ const DonateBooks = () => {
                     <input type="file" ref={fileInputRef} onChange={handleChange} />
                     {file && (
                         <>
-                        <img
-                            src={URL.createObjectURL(file)}
-                            draggable={false}
-                            alt="Pré-visualização da capa"
-                            style={{
-                                position: "absolute",
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                                borderRadius: "9px",
-                            }}
+                            <img
+                                src={URL.createObjectURL(file)}
+                                draggable={false}
+                                alt="Pré-visualização da capa"
+                                style={{
+                                    position: "absolute",
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                    borderRadius: "9px",
+                                }}
                             />
 
-                        <DeleteButton onClick={handleDelete}>Deletar</DeleteButton>
+                            <DeleteButton onClick={handleDelete}>Deletar</DeleteButton>
                         </>
                     )}
                     {!file && (
                         <>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="48"
-                            height="48"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#555"
-                            strokeWidth="1"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg>
-                        <p>Importar Capa</p>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="48"
+                                height="48"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#555"
+                                strokeWidth="1"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            <p>Importar Capa</p>
                         </>
                     )}
                 </BookCover>
@@ -144,7 +144,7 @@ const DonateBooks = () => {
                     <BookDescription>
                         <h3>Descrição</h3>
                         <textarea
-                            onChange={e => setBook({...book, sinopse: e.target.value})}
+                            onChange={e => setBook({ ...book, sinopse: e.target.value })}
                             placeholder="Digite a descrição do livro"
                         />
                     </BookDescription>

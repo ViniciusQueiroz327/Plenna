@@ -12,7 +12,11 @@ export const Wrapper = styled.div`
 
     * {
         color: black;
-    }   
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const BookCover = styled.div`
@@ -41,6 +45,11 @@ export const BookCover = styled.div`
         opacity: 0;
         position: absolute;
         cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 450px;
     }
 `
 
@@ -75,7 +84,7 @@ export const BookTitle = styled.div`
         font-size: var(--font-size-label);
     }
 `
-        
+
 export const AuthorLink = styled(Link)`
     font-size: var(--font-size-body-md);
     color: black;
@@ -104,6 +113,10 @@ export const BookDetails = styled.div`
     p {
         color: black;
         font-size: var(--font-size-body-sm);
+    }
+
+    @media (max-width: 768px) {
+        width: 100%
     }
 `
 
